@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<link href="../images/favicon.ico" rel="icon">
-    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/profile.css" rel="stylesheet">
     <link href="../css/slicknav.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
@@ -16,16 +16,15 @@
 		    $('#topnav').slicknav({prependTo:"#mobile"});
 		});	
 	</script>
-	<title>BPM | Home</title>
+	<title>BPM | Profile</title>
 </head>
 <body>
-    
-    <header>
+        <header>
         <div id="clockbar">
             <div id="clock"></div>
             <div id="searchcontainer">
             <input type="text" placeholder="Search..." name="search" id="search">
-            <button type="submit" id="searchbtn">Search</button>
+            <button type="submit">Search</button>
             </div>
         </div>
 	    <div id="topbar">
@@ -71,54 +70,46 @@
 	        </ul>
         </nav>    
 	</header>
-    
 	<main>
-        <div class="big img">
-            <span class="tag">FEATURED</span>
-            <span class="tag">DEALS</span>
-            <a href="article.html" class=".headline"><h1>CHERRY AUDIO RELEASE CA2600 SYNTHESISER</h1></a>
-        </div>
+        <div class="profilepic"><img id="profileimage" src="../images/profile.jpg" alt="Profile Picture"/></div>
+        <div class="heading"><h1>Username's Profile</h1></div>
+        <div class="content">
+        <div id="formcontainer">
+        <form id="profile" method="get" action="#">     
+        <h2>Manage Profile</h2>
+        <img id="profileimage2" src="../images/profile.jpg" alt="Profile Picture"/>
+        <label for="fname"><b>First Name: </b></label>
+            <br>
+        <input type="text" name="fname" id="fname" placeholder="First Name" value="John"> 
+        <br><br> 
+            
+        <label for="lname"><b>Last Name:</b></label><br>
+        <input type="text" name="lname" id="lname" placeholder="Last Name">   <br><br>
+                
+                
+        <label for="email"><b>Email: </b></label><br>
+        <input type="email" name="email" id="email" placeholder="Email" value="johndoe@example.com">  
+        <br><br><br>
         
-        <div class="normal1 img">
-            <span class="tag">DEALS</span>
-            <a href="article.html" class=".headline"><h2>IZOTOPE BLACK FRIDAY SALE</h2></a>
-        </div>
+            <a href="dummy.html" id="changepass">Change password</a>
+            <br>
+            <br>
+            <br>
+            
+        <input type="checkbox" name="check" id="check">    
+        <label id="mailinglist" for="check">Sign me up for the mailing list</label><br><br><br>
         
-        <div class="normal2 img">
-            <span class="tag">NEW RELEASES</span>
-            <a href="article.html" class=".headline"><h2>CEVIO PROJECT UNVEIL SPASH SCREEN</h2></a>
+            <label for="file"><b>Change Profile Picture:</b></label><br>
+        <input type="file" name="file" id="file">
+        <br><br><br>
+        <input type="submit" name="submitbutton" id="submitbutton" value="SUBMIT CHANGES"><br><br><br>       
+        <input type="button" name="managebutton" id="managebutton" value="MANAGE MY ARTICLES">       
+        <br><br>    
+        </form>
+            </div>
         </div>
-        
-        <div class="divider1">
-            <span><strong>Our Articles</strong></span>
-        </div>
-        
-        <div class="pic1 img">
-        </div>
-        
-        <div class="desc1">
-            <a href="article.html" class=".headline"><h3>HOW TO GET YOUR HANDS ON KONTAKT - WITHOUT BREAKING THE BANK</h3></a> 
-            <p>paragrph paragraph paragraphparagrph paragraph paragrapparagrph paragraph paragrapparagrph paragraph paragrap</p>
-            <span class="tag2">TUTORIAL</span>
-            <a href="dummy.html" class="button">See More &rarr;</a>
-        </div>
-        
-        <div class="divider2">
-            <span><strong>User Articles</strong></span>
-        </div>
-        
-        <div class="pic2 img">
-        </div>
-        <div class="desc2">
-            <a href="article.html" class=".headline"><h3>A CLOSER LOOK AT AIR MUSIC'S VACUUM PRO</h3></a> 
-            <p>paragrph paragraph paragraphparagrph paragraph paragrapparagrph paragraph paragrapparagrph paragraph paragrap</p>
-            <span class="tag2">REVIEW</span>
-            <a href="dummy.html" class="button">See More &rarr;</a>
-        </div>
-        
         <aside>
-        </aside>
-        
+    </aside>
 	</main>
     
     <footer>
