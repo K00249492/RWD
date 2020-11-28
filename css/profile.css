@@ -337,7 +337,7 @@ input[type=file]{
 
 /*Aside*/
 aside{
-    background-color: green;
+    background-color: black;
     grid-area:sidebar;
 }
 /*Footer*/
@@ -481,7 +481,7 @@ footer{
     }
     #profileimage2{
         display:block;
-        border: 2px solid #BF0000;
+        border:2px solid #BF0000;
         max-width:75px;
         min-width:50px;
         margin:auto;
@@ -506,39 +506,39 @@ footer{
         font-size:70%;
     }
     h2{
-        padding: 0;
+        padding:0;
     }
     #searchcontainer{
     float:right; 
     }
     #searchcontainer button{
-        float: right;
+        float:right;
         color:white;
-        padding: 7px;
-        margin-top: 8px;
+        padding:7px;
+        margin-top:8px;
         width:5em;
-        margin-right: 1em;
-        background: #BF0000;
-        border: 2px solid #BF0000;
+        margin-right:1em;
+        background:#BF0000;
+        border:2px solid #BF0000;
         border-bottom-right-radius: 5px;
         border-top-right-radius: 5px;
-        cursor: pointer;
+        cursor:pointer;
     }
     #searchcontainer #search{
-        margin-top: 8px;
+        margin-top:8px;
         width:8em;
-        padding: 6px;
-        border: 3px solid #BF0000;
+        padding:6px;
+        border:3px solid #BF0000;
         border-bottom-left-radius: 5px;
         border-top-left-radius: 5px;
-        cursor: pointer;
+        cursor:pointer;
     }
     #searchcontainer button:focus{
         outline:none; 
     }
     #searchcontainer #search:focus
     {
-        margin-top: 8px;
+        margin-top:8px;
         outline:none;
         width:14em;
         transition:0.25s;

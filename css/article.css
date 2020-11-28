@@ -199,20 +199,50 @@ main{
 }
 article{
     width:100%;
+    box-shadow:0 3px 2px #171717;
 }
 main div{
     padding:1em;
 }
-.big{
+.cherry{
     background-color:crimson;
     grid-area:big;
     background-image: url(../images/cherry.jpg);
     background-size: cover;
 }
-
+.cevio{
+    background-color:crimson;
+    grid-area:big;
+    background-image: url(../images/cevio.png);
+    background-size: cover;
+}
+.izotope{
+    background-color:crimson;
+    grid-area:big;
+    background-image: url(../images/izotope.webp);
+    background-size: cover;
+}
+.kontakt{
+    background-color:crimson;
+    grid-area:big;
+    background-image: url(../images/kontaktbig.jpg);
+    background-size: cover;
+}
+.air{
+    background-color:crimson;
+    grid-area:big;
+    background-image: url(../images/airbig.webp);
+    background-size: cover;
+}
+.pre{
+    color:#BCBCBC;
+}
+li{
+    padding-bottom: 4px;
+}
 /*Aside*/
 aside{
-    background-color: green;
+    background-color: black;
     grid-area:sidebar;
 }
 /*Footer*/
@@ -339,7 +369,7 @@ footer{
         padding:20px 25px;
    
 }
-@media only screen and (max-width:480px){
+@media only screen and (max-width:540px){
     body{
         font-size:80%;
     }
@@ -409,21 +439,4 @@ footer{
     }
     
 }
-}
-@media only screen and (max-width:1480px){
-    main{
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 350px 1fr 1fr 1fr 1fr 250px;
-    grid-template-areas:
-      "big big big big"
-      "preart preart preart preart"
-      "content content content content"
-      "content content content content"
-      "content content content content"
-      "sidebar sidebar sidebar sidebar";
-    }
-    
-    
 }

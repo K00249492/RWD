@@ -8,6 +8,7 @@
     <link href="../css/slicknav.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="../js/jquery.slicknav.min.js"></script>
     <script src="../js/iecheck.js"></script>
@@ -82,7 +83,7 @@
                     <br>
                     <label for="fname"><b>First Name <span class="ast">*</span></b></label>
                     <br>
-                    <input type="text" name="fname" id="fname" placeholder="First Name"> 
+                    <input type="text" name="fname" id="fname" placeholder="First Name" required> 
                     <br><br> 
 
                     <label for="lname"><b>Last Name</b></label>
@@ -92,42 +93,132 @@
 
                     <label for="email"><b>Email <span class="ast">*</span></b></label>
                     <br>
-                    <input type="email" name="email" id="email" placeholder="Email">  
+                    <input type="email" name="email" id="email" placeholder="Email" required>  
                     <br><br> 
 
                     <label for="email2"><b>Confirm Email <span class="ast">*</span></b></label>
                     <br>
-                    <input type="email" name="email2" id="email2" placeholder="Email">     
+                    <input type="email" name="email2" id="email2" placeholder="Email" required>     
                     <br><br><br>  
 
                     <label for="uname"><b>User Name <span class="ast">*</span>     
                     </b>    
                     </label>
                     <br>
-                    <input type="text" name="uname" id="uname" placeholder="Username">  
+                    <input type="text" name="uname" id="uname" placeholder="Username" required>  
                     <br><br>            
 
                     <label for="pass"><b>Password <span class="ast">*</span>    
                     </b>    
                     </label>
                     <br>
-                    <input type="password" name="pass" id="pass" placeholder="Password">    
+                    <input type="password" name="pass" id="pass" placeholder="Password" minlength="8" required><i class="vistoggle fa fa-eye" aria-hidden="true"></i>    
                     <br><br>
 
                     <label for="pass2"><b>Confirm Password <span class="ast">*</span>     
                     </b>    
                     </label>
                     <br>
-                    <input type="password" name="pass2" id="pass2" placeholder="Password"> 
+                    <input type="password" name="pass2" id="pass2" placeholder="Password" minlength="8" required><i class="vistoggle fa fa-eye" aria-hidden="true"></i> 
                     <br><br><br>
 
-                    <input type="button" name="reg" id="regbutton" value="SIGN UP">       
+                    <input type="submit" name="reg" id="regbutton" value="SIGN UP">       
                     <br><br>    
                     <input type="checkbox" name="check" id="check">    
                     <label id="mailinglist" for="check">Sign me up for the mailing list</label>    
                     <br><br>   
                     <span><span class="ast">*</span> Required field</span> 
-                </form>    
+                </form>  
+                <script>
+                $('.vistoggle').hover(function togglePass(){
+                    $('#pass').attr('type','text');
+                    $('#pass2').attr('type','text');
+                    $('.fa').removeClass('fa-eye').addClass('fa-eye-slash');
+                }, function(){
+                    $('#pass').attr('type','password');
+                    $('#pass2').attr('type','password');
+                    $('.fa').removeClass('fa-eye-slash').addClass('fa-eye');
+                });
+                </script>
+                <script>
+                    var fname = document.querySelector('#fname');
+                    var email = document.querySelector('#email');
+                    var email2 = document.querySelector('#email2');
+                    var uname = document.querySelector('#uname');
+                    var pass = document.querySelector('#pass');
+                    var pass2 = document.querySelector('#pass2');
+                    var form = document.querySelector('form');
+
+                    window.onload = function(){
+                        email.onchange = confirmEmail;
+                        email2.onchange = confirmEmail;
+                        pass.onchange = confirmPassword;
+                        pass2.onchange = confirmPassword;
+                    }
+                    
+                    function confirmEmail(){
+                        if(email.value != email2.value){
+                            email2.setCustomValidity("Email addresses must match.");
+                        }
+                    }
+                    function confirmPassword(){
+                        if(pass.value != pass2.value){
+                            pass2.setCustomValidity("Passwords must match.");
+                        }
+                    }
+                    
+                    fname.addEventListener('input', () => {
+                    fname.setCustomValidity('');
+                    fname.checkValidity();
+                    });
+                    
+                    email.addEventListener('input', () => {
+                    email.setCustomValidity('');
+                    email.checkValidity();
+                    });
+                    
+                    email2.addEventListener('input', () => {
+                    email2.setCustomValidity('');
+                    email2.checkValidity();
+                    });
+                    
+                    uname.addEventListener('input', () => {
+                    uname.setCustomValidity('');
+                    uname.checkValidity();
+                    });
+                    
+                    pass.addEventListener('input', () => {
+                    pass.setCustomValidity('');
+                    pass.checkValidity();
+                    });
+                    
+                    pass2.addEventListener('input', () => {
+                    pass2.setCustomValidity('');
+                    pass2.checkValidity();
+                    });
+                    
+
+                    uname.addEventListener('invalid', () => {
+                    if(fname.value === ''){
+                    fname.setCustomValidity('Please enter your first name.');
+                    }
+                    if(email.value === '') {
+                    email.setCustomValidity('Please enter your email address.');
+                    }
+                    if(email2.value === '') {
+                    email2.setCustomValidity('Please confirm your email address.');
+                    }
+                    if(uname.value === '') {
+                    uname.setCustomValidity('Please enter a username.');
+                    }
+                    if(pass.value === ''){
+                    pass.setCustomValidity('Please enter a password.');
+                    }
+                    if(pass2.value === ''){
+                    pass2.setCustomValidity('Please confirm your password.');
+                    }
+                    });
+                </script>
         </div>
         </div>
         <aside>

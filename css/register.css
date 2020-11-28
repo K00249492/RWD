@@ -203,6 +203,7 @@ main{
     text-align: center;
     background-color:#353535;
     border-radius:10px;
+    box-shadow: 0 5px 10px black;
     
 }
 #register{
@@ -271,9 +272,21 @@ main div{
 .ast{
     color:#BF0000;
 }
+form .fa-eye {
+    margin: 0 -30px; 
+    cursor: pointer;
+    color: #59ADFF; 
+}
+
+form .fa-eye-slash {
+    margin: 0 -30px; 
+    cursor: pointer;
+    color: white; 
+    font-size: .95em; 
+}
 /*Aside*/
 aside{
-    background-color: green;
+    background-color: black;
     grid-area:sidebar;
 }
 /*Footer*/
@@ -392,7 +405,7 @@ footer{
          padding:0.5em;
     }
 }
-@media only screen and (max-width:480px){
+@media only screen and (max-width:540px){
     main{
     display: grid;
     width: 100%;
@@ -421,7 +434,7 @@ footer{
         font-size: 70%;
     }
     #formcontainer{
-        padding:30px;
+        padding:80px 30px;
         width:80%;
     }
     form{
@@ -469,20 +482,3 @@ footer{
     }
 }
 
-@media only screen and (max-width:1480px){
-   main{
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 430px 1fr 1fr 1fr 1fr 350px;
-    grid-template-areas:
-      "content content content content"
-      "content content content content"
-      "content content content content"
-      "content content content content"
-      "content content content content"
-      "sidebar sidebar sidebar sidebar";
-    }
-    
-    
-}

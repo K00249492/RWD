@@ -174,7 +174,7 @@ header{
 main{
     display:grid;
     width:100%;
-    height:800px;
+    height:1000px;
     margin: auto;
     grid-template-columns: 350px 1fr 1fr 350px 350px;
     grid-template-rows: 430px 1fr;
@@ -203,7 +203,7 @@ main div{
 
 /*Aside*/
 aside{
-    background-color: green;
+    background-color: black;
     grid-area:sidebar;
 }
 /*Footer*/
@@ -330,7 +330,7 @@ footer{
         padding:20px 25px;
    
 }
-@media only screen and (max-width:480px){
+@media only screen and (max-width:540px){
     body{
         font-size:80%;
     }
@@ -397,21 +397,4 @@ footer{
     }
     
 }
-}
-@media only screen and (max-width:1480px){
-    main{
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 250px 1fr 1fr 1fr 1fr 250px;
-    grid-template-areas:
-      "big big big big"
-      "preart preart preart preart"
-      "content content content content"
-      "content content content content"
-      "content content content content"
-      "sidebar sidebar sidebar sidebar";
-    }
-    
-    
 }

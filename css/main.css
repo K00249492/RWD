@@ -235,7 +235,7 @@ p{
     grid-area:big;
     background-image: url(../images/bcherry.jpg);
     position: relative;
-    background-size: contain;
+    background-size: cover;
 }
 .normal1{
     background-color: aqua;
@@ -293,9 +293,13 @@ p{
 .divider3{
     display:none;
 }
+.sum{
+    margin-top:10px;
+    color:#BCBCBC;
+}
 /*Aside*/
 aside{
-    background-color: green;
+    background-color: black;
     grid-area:sidebar;
 }
 /*Footer*/
@@ -476,7 +480,7 @@ footer{
         cursor: pointer;
     }
     .button{
-        font-size:50%;
+        font-size:60%;
     }
     .tag2{
         display:none;

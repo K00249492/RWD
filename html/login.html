@@ -8,6 +8,7 @@
     <link href="../css/slicknav.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="../js/jquery.slicknav.min.js"></script>
     <script src="../js/iecheck.js"></script>
@@ -80,18 +81,18 @@
                     <br>
                     <label for="uname"><b>User Name</b></label>
                     <br>
-                    <input type="text" name="uname" id="uname" placeholder="Username">  
+                    <input type="text" name="uname" id="uname" placeholder="Username" required>  
                     <br><br>    
 
                     <label for="pass"><b>Password</b></label>
                     <br>
-                    <input type="password" name="pass" id="pass" placeholder="Password">
+                    <input type="password" name="pass" id="pass" placeholder="Password" minlength="8" required><i id="vistoggle" class="fa fa-eye" aria-hidden="true"></i>
                     <br><br>
                     
                     <a href="#" id="forgot">Forgotten your password?</a>
                     <br><br>
                     
-                    <input type="button" name="log" id="logbutton" value="LOG IN">       
+                    <input type="submit" name="log" id="logbutton" value="LOG IN">       
                     <br><br>
                     
                     <input type="checkbox" name="check" id="check">    
@@ -99,7 +100,7 @@
                     <br><br>
                     
                     <span id="noaccount">Don't have an account yet?<a id="reghere" href="register.html"> Register Here.</a></span> 
-                </form>    
+                </form>
         </div>
         </div>
         <aside>
@@ -118,5 +119,39 @@
         <br>
         <span id="copyright">Copyright 2020 BPM Publications</span>
     </footer>
+      
+                <script>
+                $('#vistoggle').hover(function togglePass(){
+                    $('#pass').attr('type','text');
+                    $('.fa').removeClass('fa-eye').addClass('fa-eye-slash');
+                }, function(){
+                    $('#pass').attr('type','password');
+                    $('.fa').removeClass('fa-eye-slash').addClass('fa-eye');
+                });
+                </script>
+                <script>
+                    var uname = document.querySelector('#uname');
+                    var pass = document.querySelector('#pass');
+                    var form = document.querySelector('form');
+
+                    uname.addEventListener('input', () => {
+                    uname.setCustomValidity('');
+                    uname.checkValidity();
+                    });
+                    
+                    pass.addEventListener('input', () => {
+                    pass.setCustomValidity('');
+                    pass.checkValidity();
+                    });
+
+                    uname.addEventListener('invalid', () => {
+                    if(uname.value === '') {
+                    uname.setCustomValidity('Please enter your user name.');
+                    }
+                    if(pass.value === ''){
+                    pass.setCustomValidity('Please enter your password.');
+                    }
+                    });
+                </script>
 </body>
 </html>

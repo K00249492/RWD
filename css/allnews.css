@@ -199,26 +199,31 @@ main div{
     background-color: orange;
     background-image: url(../images/kontakt.jpg);
     grid-area:pic1;
+    background-size: cover;
 }
 .pic2{
     background-color: lime;
     background-image: url(../images/air.jpg);
     grid-area:pic2;
+    background-size: cover;
 }
 .pic3{
     background-color: orange;
     background-image: url(../images/kontakt.jpg);
     grid-area:pic3;
+    background-size: cover;
 }
 .pic4{
     background-color: lime;
     background-image: url(../images/air.jpg);
     grid-area:pic4;
+    background-size: cover;
 }
 .pic5{
     background-color: orange;
     background-image: url(../images/kontakt.jpg);
     grid-area:pic5;
+    background-size: cover;
 }
 .desc1{
     background-color: #171717;
@@ -293,7 +298,7 @@ main div{
 .date{margin: 20px 10px;}
 /*Aside*/
 aside{
-    background-color: green;
+    background-color: black;
     grid-area:sidebar;
 }
 /*Footer*/
@@ -470,26 +475,6 @@ footer{
         display:block;
         grid-area:desc4;
         background-color:#171717;
-    }
-    
-    
-}
-/*This extra bracket below brings up an error when run through the validator, yet removing it breaks the layout of this page completely. It has been left for the time being*/
-}
-@media only screen and (max-width:1280px){
-    main{
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 430px 430px 40px 350px 40px 350px 350px;
-    grid-template-areas:
-      "big big big big"
-      "normal1 normal1 normal2 normal2"
-      "divider1 divider1 divider1 divider1"
-      "pic1 desc1 desc1 desc1"
-      "divider2 divider2 divider2 divider2"
-      "pic2 desc2 desc2 desc2"
-      "sidebar sidebar sidebar sidebar";
     }
     
     
