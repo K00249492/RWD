@@ -22,9 +22,18 @@ body{
 }
 a{
     text-decoration:none;
-    color:#59ADFF;
+    color:white;
 }
 a:hover{
+    color:#59ADFF;
+    animation-name:fadefromwhite;
+    animation-duration:0.25s;
+}
+form a{
+    text-decoration:none;
+    color:#59ADFF;
+}
+form a:hover{
     color:white;
     animation-name:fadetowhite;
     animation-duration:0.25s;
@@ -47,10 +56,20 @@ header{
     background-color: black;
     height: 50px;
 }
-/*#clock{
+#mobileclockbar{
+    display: none;
+}
+#clock{
     float:left;
-    color:#59ADFF;
-}*/
+    font-size: 80%;
+    font-family: 'Orbitron',sans-serif;
+    color:#BCBCBC;
+    height: 50px;
+}
+#date{
+    line-height: 50px;
+    margin-left: 1em;
+}
 #searchcontainer{
     float:right; 
 }
@@ -178,7 +197,7 @@ header{
 /*Main*/
 main{
     display: grid;
-    height:1000px;
+    height:1500px;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 350px;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -310,6 +329,13 @@ aside{
     background-color: black;
     grid-area:sidebar;
 }
+aside .ad{
+    display: block;
+    margin:auto;
+}
+#banner{
+    display:none;
+}
 /*Footer*/
 #bottomlogo{
     height:25px;
@@ -386,7 +412,19 @@ footer{
       "content content content content"
       "sidebar sidebar sidebar sidebar";
     }
-    
+        #clock{
+        display: none;
+    }
+    #mobileclockbar{
+        height: 50px;
+        display: block;
+        font-family:'Orbitron',sans-serif;
+        color:#BCBCBC;
+        text-align: center;
+    }
+    #mdate{
+        line-height:50px;
+    }
 	#topnav{
 		display:none;
 	}
@@ -428,6 +466,15 @@ footer{
     #formlogo{
         height:10%;
     }
+   aside .ad{
+    display: none;
+}
+#banner{
+    display:block;
+    max-width:100vw;
+    max-height: 250px;
+    margin:auto;
+}
 }
 @media only screen and (max-width:540px){
     main{
@@ -493,7 +540,7 @@ footer{
     {
         margin-top: 8px;
         outline:none;
-        width:14em;
+        width:12em;
         transition:0.25s;
         padding: 6px;
         border: 3px solid #BF0000;
@@ -501,4 +548,9 @@ footer{
         border-top-left-radius: 5px;
         cursor: pointer;
     }
+        #banner{
+    display:block;
+    max-width:100vw;
+    margin:2.5em auto 0 auto;
+}
 }

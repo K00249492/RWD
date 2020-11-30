@@ -47,10 +47,20 @@ header{
     background-color: black;
     height: 50px;
 }
-/*#clock{
+#mobileclockbar{
+    display: none;
+}
+#clock{
     float:left;
-    color:#59ADFF;
-}*/
+    font-size: 80%;
+    font-family: 'Orbitron',sans-serif;
+    color:#BCBCBC;
+    height: 50px;
+}
+#date{
+    line-height: 50px;
+    margin-left: 1em;
+}
 #searchcontainer{
     float:right; 
 }
@@ -175,55 +185,68 @@ header{
 main{
     display: grid;
     width: 100%;
+    
+    height:1500px;
     grid-template-columns: 350px 1fr 1fr 1fr 350px;
-    grid-template-rows: 100px 40px 350px 350px 350px 350px 40px 350px;
+    grid-template-rows: 100px 350px 350px 350px 350px 350px;
     grid-template-areas:
       "heading heading heading heading sidebar"
-      "divider1 divider1 divider1 divider1 sidebar"
       "pic1 desc1 desc1 desc1 sidebar"
       "pic2 desc2 desc2 desc2 sidebar"
       "pic3 desc3 desc3 desc3 sidebar"
       "pic4 desc4 desc4 desc4 sidebar"
-      "divider2 divider2 divider2 divider2 sidebar"
       "pic5 desc5 desc5 desc5 sidebar";
 }
-
+.date{
+    color: #BCBCBC;
+}
+.summary{
+    color: #BCBCBC;
+}
 main div{
     padding:1em;
 }
+h2{
+    font-size:100%;
+}
 .heading{
-    background-color:#171717;
+    background-color:black;
     grid-area:heading; 
 }
 .pic1{
     background-color: orange;
-    background-image: url(../images/kontakt.jpg);
+    background-image: url(../images/izotopesmall.jpg);
     grid-area:pic1;
     background-size: cover;
+    background-position: center;
 }
 .pic2{
     background-color: lime;
-    background-image: url(../images/air.jpg);
+    background-image: url(../images/kontakt.jpg);
     grid-area:pic2;
     background-size: cover;
+    background-position: center;
 }
 .pic3{
     background-color: orange;
-    background-image: url(../images/kontakt.jpg);
+    background-image: url(../images/ceviosmall.jpg);
     grid-area:pic3;
     background-size: cover;
+    background-position: center;
 }
 .pic4{
     background-color: lime;
     background-image: url(../images/air.jpg);
     grid-area:pic4;
     background-size: cover;
+    background-position: center;
 }
 .pic5{
     background-color: orange;
-    background-image: url(../images/kontakt.jpg);
+    background-image: url(../images/cherrysmall.jpg);
     grid-area:pic5;
     background-size: cover;
+    background-position: center;
 }
 .desc1{
     background-color: #171717;
@@ -254,14 +277,6 @@ main div{
     grid-area:desc5;
     position: relative;
     border-bottom: 1px solid #353535;
-}
-.divider1{
-    background-color: #353535;
-    grid-area:divider1;
-}
-.divider2{
-    background-color: #353535;
-    grid-area:divider2;
 }
 .button{
     color:white;
@@ -295,11 +310,18 @@ main div{
     margin:10px;
     display: inline-block;
 }
-.date{margin: 20px 10px;}
 /*Aside*/
 aside{
     background-color: black;
     grid-area:sidebar;
+}
+
+aside .ad{
+    display: block;
+    margin:auto;
+}
+#banner{
+    display:none;
 }
 /*Footer*/
 #bottomlogo{
@@ -368,28 +390,39 @@ footer{
     display: grid;
     width: 100%;
     grid-template-columns: 250px 1fr 250px 1fr;
-    grid-template-rows: 100px 40px 250px 250px 250px 250px 40px 250px 250px;
+    grid-template-rows: 100px 250px 250px 250px 250px 250px 250px;
     grid-template-areas:
       "heading heading heading heading"
-      "divider1 divider1 divider1 divider1"
       "pic1 desc1 desc1 desc1"
       "pic2 desc2 desc2 desc2"
       "pic3 desc3 desc3 desc3"
       "pic4 desc4 desc4 desc4"
-      "divider2 divider2 divider2 divider2"
       "pic5 desc5 desc5 desc5"
       "sidebar sidebar sidebar sidebar";
     }
-     h3{
-        font-size: 85%;
-        margin:0 5px;
+     h2{
+        font-size: 80%;
+        margin:0 0;
     }
     .summary{
-        display:none;
+        font-size:80%;
     }
 	#topnav{
 		display:none;
 	}
+    #clock{
+        display: none;
+    }
+    #mobileclockbar{
+        height: 50px;
+        display: block;
+        font-family:'Orbitron',sans-serif;
+        color:#BCBCBC;
+        text-align: center;
+    }
+    #mdate{
+        line-height:50px;
+    }
 	.slicknav_menu{
 		background-color:#353535 !important;
     }
@@ -425,27 +458,33 @@ footer{
         flex:1 1 500px;
          padding:0.5em;
     }
-   
+   aside .ad{
+    display: none;
+}
+#banner{
+    display:block;
+    max-width:100vw;
+    max-height: 250px;
+    margin:auto;
+}
 }
 @media only screen and (max-width:540px){
     main{
     display: grid;
     width: 100%;
     grid-template-columns: 100px 1fr 1fr 1fr;
-    grid-template-rows: 100px 40px 100px 100px 100px 100px 40px 100px 250px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 250px;
     grid-template-areas:
       "heading heading heading heading"
-      "divider1 divider1 divider1 divider1"
       "pic1 desc1 desc1 desc1"
       "pic2 desc2 desc2 desc2"
       "pic3 desc3 desc3 desc3"
       "pic4 desc4 desc4 desc4"
-      "divider2 divider2 divider2 divider2"
       "pic5 desc5 desc5 desc5"
       "sidebar sidebar sidebar sidebar";
     }
      h2, p{
-        font-size:75%;
+        font-size:65%;
         margin-left:5px;
     }
     .summary{
@@ -455,12 +494,51 @@ footer{
         margin-top:10px;
     }
     .button{
-        font-size:50%;
+        font-size:70%;
     }
     .tag2{
         display:none;
     }
-    
+        #searchcontainer{
+    float:right; 
+    }
+    #searchcontainer button{
+        float: right;
+        color:white;
+        padding: 7px;
+        margin-top: 8px;
+        width:5em;
+        margin-right: 1em;
+        background: #BF0000;
+        border: 2px solid #BF0000;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        cursor: pointer;
+    }
+    #searchcontainer #search{
+        margin-top: 8px;
+        width:8em;
+        padding: 6px;
+        border: 3px solid #BF0000;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        cursor: pointer;
+    }
+    #searchcontainer button:focus{
+        outline:none; 
+    }
+    #searchcontainer #search:focus
+    {
+        margin-top: 8px;
+        outline:none;
+        width:12em;
+        transition:0.25s;
+        padding: 6px;
+        border: 3px solid #BF0000;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        cursor: pointer;
+    }
     .divider3{
         display:block;
         grid-area:divider3;
@@ -476,6 +554,10 @@ footer{
         grid-area:desc4;
         background-color:#171717;
     }
-    
+    #banner{
+    display:block;
+    max-width:100vw;
+    margin:2.5em auto 0 auto;
+}
     
 }

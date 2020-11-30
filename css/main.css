@@ -47,10 +47,20 @@ header{
     background-color: black;
     height: 50px;
 }
-/*#clock{
+#mobileclockbar{
+    display: none;
+}
+#clock{
     float:left;
-    color:#59ADFF;
-}*/
+    font-size: 80%;
+    font-family: 'Orbitron',sans-serif;
+    color:#BCBCBC;
+    height: 50px;
+}
+#date{
+    line-height: 50px;
+    margin-left: 1em;
+}
 #searchcontainer{
     float:right; 
 }
@@ -236,6 +246,7 @@ p{
     background-image: url(../images/bcherry.jpg);
     position: relative;
     background-size: cover;
+    background-position: center;
 }
 .normal1{
     background-color: aqua;
@@ -243,6 +254,7 @@ p{
     background-image: url(../images/izotope.webp);
     position: relative;
     background-size: cover;
+    background-position: center;
 }
 .normal2{
     background-color: blue;
@@ -250,6 +262,7 @@ p{
     background-image: url(../images/bcevio.png);
     position: relative;
     background-size: cover;
+    background-position: center;
 }
 .pic1{
     background-color: orange;
@@ -258,6 +271,7 @@ p{
     background-origin:padding-box;
     background-size: cover;
     grid-area:pic1;
+    background-position: center;
 }
 .pic2{
     background-color: lime;
@@ -265,6 +279,7 @@ p{
     position: relative;
     background-size: contain;
     grid-area:pic2;
+    background-position: center;
 }
 .desc1{
     background-color: #171717;
@@ -301,6 +316,16 @@ p{
 aside{
     background-color: black;
     grid-area:sidebar;
+}
+
+aside .ad{
+    display: block;
+    margin:auto;
+    min-width: = 200px;
+    max-width: = 200px;
+}
+#banner{
+    display:none;
 }
 /*Footer*/
 #bottomlogo{
@@ -386,6 +411,19 @@ footer{
 	#topnav{
 		display:none;
 	}
+    #clock{
+        display: none;
+    }
+    #mobileclockbar{
+        height: 50px;
+        display: block;
+        font-family:'Orbitron',sans-serif;
+        color:#BCBCBC;
+        text-align: center;
+    }
+    #mdate{
+        line-height:50px;
+    }
 	.slicknav_menu{
 		background-color:#353535 !important;
     }
@@ -421,7 +459,15 @@ footer{
         flex:1 1 500px;
          padding:0.5em;
     }
-   
+   aside .ad{
+    display: none;
+}
+#banner{
+    display:block;
+    max-width:100vw;
+    max-height: 250px;
+    margin:auto;
+}
 }
 
 @media only screen and (max-width:540px){
@@ -471,7 +517,7 @@ footer{
     {
         margin-top: 8px;
         outline:none;
-        width:14em;
+        width:12em;
         transition:0.25s;
         padding: 6px;
         border: 3px solid #BF0000;
@@ -497,6 +543,11 @@ footer{
     h3{
         font-size:75%; 
     }
+    #banner{
+    display:block;
+    max-width:100vw;
+    margin:2.5em auto 0 auto;
+}
     
 }
 

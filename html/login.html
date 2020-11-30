@@ -7,11 +7,11 @@
     <link href="../css/login.css" rel="stylesheet">
     <link href="../css/slicknav.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="../js/jquery.slicknav.min.js"></script>
-    <script src="../js/iecheck.js"></script>
     <script>
 	    $(document).ready(function(){
 		    $('#topnav').slicknav({prependTo:"#mobile"});
@@ -21,12 +21,17 @@
 </head>
 <body>
     
-        <header>
+    <header>
+        <div id="mobileclockbar">
+            <span id="mdate"></span>
+        </div>
         <div id="clockbar">
-            <div id="clock"></div>
+            <div id="clock">
+                <span id="date"></span>
+            </div>
             <div id="searchcontainer">
             <input type="text" placeholder="Search..." name="search" id="search">
-            <button type="submit">Search</button>
+            <button type="submit" id="searchbtn">Search</button>
             </div>
         </div>
 	    <div id="topbar">
@@ -43,6 +48,7 @@
                 <li><a href="index.html" class="current">Home</a></li>
 	            <li><a href="dummy.html">Our Articles</a>
                     <ul>
+                        <li><a href="dummy.html">All Our Articles</a></li>
 			            <li><a href="dummy.html">New Releases</a></li>
 			            <li><a href="dummy.html">Reviews</a></li>
 			            <li><a href="dummy.html">Tutorial</a></li>
@@ -52,6 +58,7 @@
                 </li>
 	            <li><a href="dummy.html">User Articles</a>
                     <ul>
+                        <li><a href="dummy.html">All User Articles</a></li>
 			            <li><a href="dummy.html">New Releases</a></li>
 			            <li><a href="dummy.html">Reviews</a></li>
 			            <li><a href="dummy.html">Tutorial</a></li>
@@ -61,6 +68,7 @@
                 </li>
 		        <li><a href="allnews.html">All News</a>
 		            <ul>
+                        <li><a href="allnews.html">All Articles</a></li>
 			            <li><a href="dummy.html">New Releases</a></li>
 			            <li><a href="dummy.html">Reviews</a></li>
 			            <li><a href="dummy.html">Tutorial</a></li>
@@ -68,15 +76,29 @@
                         <li><a href="dummy.html">Deals</a></li>
 			        </ul>
 		        </li>
-	            <li><a href="dummy.html">Contribute</a></li>
+	            <li><a href="dummy.html">Contribute</a>
+                    <ul>
+                        <li><a href=profile.html>Profile</a></li>
+                        <li><a href=register.html>Sign Up</a></li>
+                        <li><a href=login.html>Log In</a></li>
+                        <li><a href=dummy.html>Why Contribute?</a></li>
+                    </ul>
+                </li>
 	        </ul>
         </nav>    
 	</header>
-    
+        <script>
+            var date = new Date();
+            var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+            var days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+            document.getElementById('date').innerHTML = days[date.getDay()] + " " + date.getDate() + "-" + months[date.getMonth()] + "-" + date.getFullYear();
+        
+            document.getElementById('mdate').innerHTML = days[date.getDay()] + " " + date.getDate() + "-" + months[date.getMonth()] + "-" + date.getFullYear();
+    </script>
 	<main>
         <div class="content">
             <div id="formcontainer">
-                <form id="login" method="get" action="#"> 
+                <form id="login" method="get" action="profile.html"> 
                     <h1>LOG IN</h1>
                     <br>
                     <label for="uname"><b>User Name</b></label>
@@ -104,6 +126,11 @@
         </div>
         </div>
         <aside>
+            <a href="https://employeetimeclocksystem.com/hand-scan-time-clock/"><img src="../images/ad.jpg" alt="Ad" class="ad" id="ad"/></a>
+            <br>
+            <a href="https://tugofwarwithtime.com/downloadapp_sidebar_ad/"><img src="../images/ad2.jpg" alt="Ad" class="ad"/></a>
+            <a href="https://www.dhgate.com ">
+                <img src="../images/adbanner.jpg" alt="Ad" class="banner" id="banner"/></a>
     </aside>
 	</main>
     
@@ -119,7 +146,23 @@
         <br>
         <span id="copyright">Copyright 2020 BPM Publications</span>
     </footer>
-      
+       <!--script source - https://stackoverflow.com/questions/19999388/check-if-user-is-using-ie-->
+      <script>
+        window.onload = function(){
+            var isIE = false;
+            var ua = window.navigator.userAgent;
+            var old_ie = ua.indexOf('MSIE ');
+            var new_ie = ua.indexOf('Trident/');
+
+            if ((old_ie > -1) || (new_ie > -1)) {
+                isIE = true;
+            }
+
+            if ( isIE ) {
+                alert("You appear to be using Internet Explorer. Please use a modern browser to view this website.");
+            }
+        }
+    </script>
                 <script>
                 $('#vistoggle').hover(function togglePass(){
                     $('#pass').attr('type','text');

@@ -7,11 +7,11 @@
     <link href="../css/article.css" rel="stylesheet">
     <link href="../css/slicknav.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="../js/jquery.slicknav.min.js"></script>
-    <script src="../js/iecheck.js"></script>
     <script>
 	    $(document).ready(function(){
 		    $('#topnav').slicknav({prependTo:"#mobile"});
@@ -22,11 +22,16 @@
 <body>
     
     <header>
+        <div id="mobileclockbar">
+            <span id="mdate"></span>
+        </div>
         <div id="clockbar">
-            <div id="clock"></div>
+            <div id="clock">
+                <span id="date"></span>
+            </div>
             <div id="searchcontainer">
             <input type="text" placeholder="Search..." name="search" id="search">
-            <button type="submit">Search</button>
+            <button type="submit" id="searchbtn">Search</button>
             </div>
         </div>
 	    <div id="topbar">
@@ -43,6 +48,7 @@
                 <li><a href="index.html" class="current">Home</a></li>
 	            <li><a href="dummy.html">Our Articles</a>
                     <ul>
+                        <li><a href="dummy.html">All Our Articles</a></li>
 			            <li><a href="dummy.html">New Releases</a></li>
 			            <li><a href="dummy.html">Reviews</a></li>
 			            <li><a href="dummy.html">Tutorial</a></li>
@@ -52,6 +58,7 @@
                 </li>
 	            <li><a href="dummy.html">User Articles</a>
                     <ul>
+                        <li><a href="dummy.html">All User Articles</a></li>
 			            <li><a href="dummy.html">New Releases</a></li>
 			            <li><a href="dummy.html">Reviews</a></li>
 			            <li><a href="dummy.html">Tutorial</a></li>
@@ -61,6 +68,7 @@
                 </li>
 		        <li><a href="allnews.html">All News</a>
 		            <ul>
+                        <li><a href="allnews.html">All Articles</a></li>
 			            <li><a href="dummy.html">New Releases</a></li>
 			            <li><a href="dummy.html">Reviews</a></li>
 			            <li><a href="dummy.html">Tutorial</a></li>
@@ -68,11 +76,25 @@
                         <li><a href="dummy.html">Deals</a></li>
 			        </ul>
 		        </li>
-	            <li><a href="dummy.html">Contribute</a></li>
+	            <li><a href="dummy.html">Contribute</a>
+                    <ul>
+                        <li><a href=profile.html>Profile</a></li>
+                        <li><a href=register.html>Sign Up</a></li>
+                        <li><a href=login.html>Log In</a></li>
+                        <li><a href=dummy.html>Why Contribute?</a></li>
+                    </ul>
+                </li>
 	        </ul>
         </nav>    
 	</header>
-    
+        <script>
+            var date = new Date();
+            var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+            var days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+            document.getElementById('date').innerHTML = days[date.getDay()] + " " + date.getDate() + "-" + months[date.getMonth()] + "-" + date.getFullYear();
+        
+            document.getElementById('mdate').innerHTML = days[date.getDay()] + " " + date.getDate() + "-" + months[date.getMonth()] + "-" + date.getFullYear();
+    </script>
 	<main>
         <div class="air">
         </div>
@@ -80,9 +102,9 @@
         <div class="prearticle">
             <h1>A CLOSER LOOK AT AIR MUSIC'S VACUUM PRO</h1>
             <!--article source:https://www.attackmagazine.com/reviews/gear-software/air-vacuum-pro/ -->
-            <p class="pre"><em>by Liam Ashton</em></p>
+            <p class="pre"><em>by Username123</em></p>
             <p class="pre">1/11/2020</p>
-            <p class="pre">AIR Music Technology’s reputation as a producer of high quality effects and virtual instruments stems from their early work providing the core of the stock plugins in Pro Tools. As they branch out with their own range of virtual instruments, Liam Ashton takes Vacuum for a spin.</p>
+            <p class="pre">Username123 takes Air Music's Vacuum Pro synth for a spin.</p>
         </div>   
         <div class="content">
              
@@ -92,10 +114,14 @@
             <p>The oscillators offer a sweepable wave shape knob, going from a triangle to a pulse wave. Being able to blend between different waveforms within one oscillator is a strong addition to the synth, as it provides a far larger scope for creating basic, but unusual patches. You can also add in delayed harmonics within the oscillator section, which creates some very interesting evolving sounds. However, I found the Quad oscillator mode slightly overpowering. With the tiniest levels of detuning, the patch lost all subtlety and turned immediately into a peak-time rave weapon. Some people may find that useful, but the all-or-nothing nature of the feature is too much for my taste.</p>
             <p>Saturation is a big part of what makes this synth special – with up to six separate stages to dial it in, there’s more here than on any other synth I’ve ever come across. I did find, however, that if you didn’t use any saturation throughout the patch, things sounded quite stale and unexciting. It seems almost as though this is a synth which relies on cranking up the saturation levels to create the sounds it wants to be associated with. That’s by no means a critique of the sounds it’s capable of; creating impressive and attractive patches is easy and the final product is certainly up there with other synths in its class. However, it’s a shame that a little more excitement can’t be dialled in through the raw oscillators and filters before resorting to saturation.</p>
             <p>Vacuum offers a very useful feature for providing inspiration and adding variation to a track. There are five different sections (Oscillators, Filters, Envelopes, Modulation and Effects), any of which can be locked while other sections of the synth are randomised. It’s a great tool when you have a sound and want to create a slightly different variation for progressions within a track. AIR also say that the synth possesses a feature known as Smart Sound Randomization so that the results wont be wildly different from the starting point, but far enough away to provide an interesting substitute. In other words, it’s not a true randomisation but a more organic-sounding form of sound evolution.</p>
-            <p>Vacuum is only available as a 64-bit plugin, which is the shape of things to come but means that users on slightly older versions of some DAWs (Logic 9, Ableton 8.4 onwards) will be forced to start the program in 64-bit mode to use the synth. I tested the synth in Logic X and found it to be reassuringly stable. Despite being released shortly before Logic X, the ‘quick edit’ macro section included in Vacuum displays striking similarities to Logic’s new Smart Controls. It’s a very useful feature, especially to quickly tweak and automate broad changes in the sound. However, if you were attempting to dial in a certain sound, the main interface still offers the most control.</p>
             <p>Vacuum Pro is an impressive synth, and enjoyable to use, but there are minor issues. The reliance on saturation is a problem and the Quad oscillator detune mode feels like it needs a little work to make it more useable. But despite those issues, this is a powerful synth which can turn its hand to a wide range of sounds. At a fraction under $200 it’s not quite a bargain, but the price is fair.</p>
         </div>
     <aside>
+        <a href="https://employeetimeclocksystem.com/hand-scan-time-clock/"><img src="../images/ad.jpg" alt="Ad" class="ad" id="ad"/></a>
+            <br>
+            <a href="https://tugofwarwithtime.com/downloadapp_sidebar_ad/"><img src="../images/ad2.jpg" alt="Ad" class="ad"/></a>
+            <a href="https://www.dhgate.com ">
+                <img src="../images/adbanner.jpg" alt="Ad" class="banner" id="banner"/></a>
     </aside>
 	</main>
     
@@ -111,5 +137,22 @@
         <br>
         <span id="copyright">Copyright 2020 BPM Publications</span>
     </footer>
+     <!--script source - https://stackoverflow.com/questions/19999388/check-if-user-is-using-ie-->
+      <script>
+        window.onload = function(){
+            var isIE = false;
+            var ua = window.navigator.userAgent;
+            var old_ie = ua.indexOf('MSIE ');
+            var new_ie = ua.indexOf('Trident/');
+
+            if ((old_ie > -1) || (new_ie > -1)) {
+                isIE = true;
+            }
+
+            if ( isIE ) {
+                alert("You appear to be using Internet Explorer. Please use a modern browser to view this website.");
+            }
+        }
+    </script>
 </body>
 </html>

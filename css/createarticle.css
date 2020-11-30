@@ -12,6 +12,7 @@ light grey: #BCBCBC
 /*{
     border: 3px solid yellow;
 }*/
+
 body{
     font-family:'Roboto',sans-serif;
     color:white;
@@ -21,11 +22,11 @@ body{
 }
 a{
     text-decoration:none;
-    color:#59ADFF;
+    color:white;
 }
 a:hover{
-    color:white;
-    animation-name:fadetowhite;
+    color:#59ADFF;
+    animation-name:fadefromwhite;
     animation-duration:0.25s;
 }
 .uhoh{
@@ -79,6 +80,9 @@ header{
 #searchcontainer #search{
     margin-top: 8px;
     width:15em;
+    background-color: white;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     padding: 6px;
     border: 3px solid #BF0000;
     border-bottom-left-radius: 5px;
@@ -91,6 +95,7 @@ header{
 #searchcontainer #search:focus
 {
     margin-top: 8px;
+    color:black;
     outline:none;
     width:20em;
     transition:0.25s;
@@ -185,78 +190,174 @@ header{
 main{
     display: grid;
     width: 100%;
-    margin: auto;
-    
-    height:1500px;
-    grid-template-columns: 430px 1fr 1fr 350px 350px;
-    grid-template-rows: 430px 1fr 1fr 1fr 1fr 1fr;
+    height: 1300px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 350px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
-      "big big big big sidebar"
-      "preart preart preart preart sidebar"
+      "content content content content sidebar"
       "content content content content sidebar"
       "content content content content sidebar"
       "content content content content sidebar"
       "content content content content sidebar";
 }
-.content{
-    grid-area: content;
-    background-color:#171717;
-    padding:0px 75px;
+#profileimage2{
+    border: 2px solid #BF0000;
+    display:block;
+    max-width:100px;
+    min-width:100px;
+    margin:auto;
+    margin-bottom: 2em;
 }
-.prearticle{
-    background-color:#171717;
-    padding:20px 75px;
-    margin:0;
-    grid-area:preart;
+label[for=fname]{
+    margin-top: 3em;
 }
-article{
-    width:100%;
-    box-shadow:0 3px 2px #171717;
+form h2{
+    margin-bottom: 3em;
+}
+#formcontainer{
+    display: block;
+    width:90%;
+    max-width:500px; 
+    height:1000px;
+    margin:auto;
+    text-align: center;
+    padding:50px;
+    background-color:#353535;
+    border-radius:10px;
+    box-shadow: 0 5px 10px black;
+    
+}
+#changepass{
+    color: #59ADFF;
+}
+#changepass:hover{
+    color:white; 
+    animation-name: fadetowhite;
+    animation-duration: 0.25s;
+}
+#profile{
+    text-align: left;
+    display: inline-block;
+}
+form h1{
+    text-align: center;
 }
 main div{
     padding:1em;
 }
-.cherry{
-    background-color:crimson;
-    grid-area:big;
-    background-image: url(../images/cherry.jpg);
-    background-size: cover;
-    background-position: center;
+
+.content{
+    background-color:#171717;
+    grid-area:content;
+    display: flex;
 }
-.cevio{
-    background-color:crimson;
-    grid-area:big;
-    background-image: url(../images/cevio.png);
-    background-size: cover;
-    background-position: center;
+input[type=text],
+input[type=email],
+input[type=password]
+{
+    height:110%;
+    background-color: #171717;
+    width:15em;
+    padding:10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border:3px solid white;
+    color:white;
 }
-.izotope{
-    background-color:crimson;
-    grid-area:big;
-    background-image: url(../images/izotope.webp);
-    background-size: cover;
-    background-position: center;
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus{
+    border:3px solid #59ADFF;
+    outline:none;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    color:#59ADFF;
 }
-.kontakt{
-    background-color:crimson;
-    grid-area:big;
-    background-image: url(../images/kontaktbig.jpg);
-    background-size: cover;
-    background-position: center;
+textarea{
+    height:110%;
+    background-color: #171717;
+    width:15em;
+    padding:10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border:3px solid white;
+    color:white;
 }
-.air{
-    background-color:crimson;
-    grid-area:big;
-    background-image: url(../images/airbig.webp);
-    background-size: cover;
-    background-position: center;
+textarea:focus{
+    border:3px solid #59ADFF;
+    outline:none;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    color:#59ADFF;
 }
-.pre{
-    color:#BCBCBC;
+input[type=file]{
+    margin-top:5px;
 }
-li{
-    padding-bottom: 4px;
+select{
+    margin-top:5px;
 }
+#managebutton{
+    background-color:#59ADFF;
+    cursor:pointer;
+    font-size: 93%;
+    font-weight:bold; 
+    color:white;
+    width:15em;
+    padding:10px;
+    border-radius: 5px;
+    border:none;
+}
+#submitbutton{
+    background-color:#BF0000;
+    cursor:pointer;
+    font-size: 93%;
+    font-weight:bold; 
+    color:white;
+    width:15em;
+    padding:10px;
+    border-radius: 5px;
+    border:none;
+}
+.divider1{
+    background-color: #353535;
+    grid-area:divider1;
+}
+.button{
+    color:white;
+    background-color:#BF0000;
+    padding:5px;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    position:absolute;
+    right:0;
+    bottom:0;
+}
+.button:hover{
+    color:#59ADFF;
+}
+.tag2{
+    color:white;
+    background-color:#59ADFF;
+    padding:5px;
+    margin:10px;
+    display: inline-block;
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+.tag{
+    color:white;
+    background-color:#59ADFF;
+    padding:5px;
+    margin:10px;
+    display: inline-block;
+}
+.date{
+    margin: 20px 10px;
+}
+
 /*Aside*/
 aside{
     background-color: black;
@@ -335,11 +436,12 @@ footer{
     main{
     display: grid;
     width: 100%;
+
+    height:1500px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 430px 1fr 1fr 1fr 1fr 250px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 250px;
     grid-template-areas:
-      "big big big big"
-      "preart preart preart preart"
+      "content content content content"
       "content content content content"
       "content content content content"
       "content content content content"
@@ -396,15 +498,6 @@ footer{
         flex:1 1 500px;
          padding:0.5em;
     }
-    .prearticle{
-        padding:20px 25px;
-    }
-    .content{
-        grid-area: content;
-        background-color:#171717;
-        padding:20px 25px;
-   
-}
    aside .ad{
     display: none;
 }
@@ -416,64 +509,93 @@ footer{
 }
 }
 @media only screen and (max-width:540px){
-    body{
-        font-size:80%;
-    }
     main{
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 250px 1fr 1fr 1fr 1fr 250px;
+    height:1400px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 250px;
     grid-template-areas:
-      "big big big big"
-      "preart preart preart preart"
-      "content content content content"
-      "content content content content"
-      "content content content content"
-      "sidebar sidebar sidebar sidebar";
+      "content content content"
+      "content content content"
+      "content content content"
+      "content content content"
+      "sidebar sidebar sidebar";
     }
-    .prearticle{
-        padding:20px 25px;
+    h1{
+        font-size: 1.5em;
     }
-    p{
-        font-size:85%;
+    .profilepic{
+        display:none;
     }
-    .content{
-        grid-area: content;
-        background-color:#171717;
-        padding:20px 25px;
+    #profileimage{
+        display:none;
+    }
+    #profileimage2{
+        display:block;
+        border:2px solid #BF0000;
+        max-width:75px;
+        min-width:50px;
+        margin:auto;
+        margin-bottom:20px;
+    }
+    input[type=text],
+    input[type=file],
+    input[type=email],
+    input[type=password],
+    textarea
+    {
+        width:12em;
+    }
+    input[type=text]:focus,
+    input[type=email]:focus,
+    input[type=password]:focus,
+    textarea:focus{
+        width:12em;
+    }
+    #submitbutton,
+    #managebutton
+    {
+        font-size:75%;
+    }
+    #formcontainer{
+        padding:30px 10px;
+        width:90%;
+    }
+    h2{
+        padding:0;
     }
     #searchcontainer{
     float:right; 
     }
     #searchcontainer button{
-        float: right;
+        float:right;
         color:white;
-        padding: 7px;
-        margin-top: 8px;
+        padding:7px;
+        margin-top:8px;
         width:5em;
-        margin-right: 1em;
-        background: #BF0000;
-        border: 2px solid #BF0000;
+        margin-right:1em;
+        background:#BF0000;
+        border:2px solid #BF0000;
         border-bottom-right-radius: 5px;
         border-top-right-radius: 5px;
-        cursor: pointer;
+        cursor:pointer;
     }
     #searchcontainer #search{
-        margin-top: 8px;
+        margin-top:8px;
         width:8em;
-        padding: 6px;
-        border: 3px solid #BF0000;
+        padding:6px;
+        border:3px solid #BF0000;
         border-bottom-left-radius: 5px;
         border-top-left-radius: 5px;
-        cursor: pointer;
+        cursor:pointer;
     }
     #searchcontainer button:focus{
         outline:none; 
     }
     #searchcontainer #search:focus
     {
-        margin-top: 8px;
+        margin-top:8px;
         outline:none;
         width:12em;
         transition:0.25s;
@@ -489,4 +611,3 @@ footer{
     margin:2.5em auto 0 auto;
 }
 }
-
